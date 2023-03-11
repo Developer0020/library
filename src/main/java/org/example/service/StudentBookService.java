@@ -17,6 +17,9 @@ public class StudentBookService {
     }
     public void history(Integer id) {
     }
+
+    public void studentTakenBook() {
+    }
 }
 /*Student Taken book (studentlar olib hali qaytarmagan kitoblar ro'yhati.)
   Konsolga quyidagilar chiqsin*/
