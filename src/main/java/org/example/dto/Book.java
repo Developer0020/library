@@ -13,6 +13,21 @@ public class Book {
     private String author;
     private LocalDate publishYear;
     private String amount;
-    private boolean visible;
+    private boolean visible = true;
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", publishYear=" + publishYear +
+                ", amount='" + amount + '\'' +
+                ", visible=" + visible +
+                '}';
+    }
+
+
+    ;
 }
 //id,title,author, publishYear, amount, visible

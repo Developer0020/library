@@ -33,7 +33,7 @@ public class UserController {
     }
 
     private void bookList() {
-        bookService.booklist();
+        bookService.bookList();
     }
 
     private void takeBook() {

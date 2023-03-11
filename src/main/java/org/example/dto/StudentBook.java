@@ -16,6 +16,17 @@ public class StudentBook {
     private Status status;
     private LocalDate returnedDate;
     private String duration; // davomiyliki yani nechi kun unda bo'lishi
-
+    @Override
+    public String toString() {
+        return "StudentBook{" +
+                "id=" + id +
+                ", student_id=" + student_id +
+                ", book_id=" + book_id +
+                ", createdDate=" + createdDate +
+                ", status=" + status +
+                ", returnedDate=" + returnedDate +
+                ", duration='" + duration + '\'' +
+                '}';
+    }
 }
 //id,student_id,book_id,createdDate,status(TAKEN,RETURNED),returnedDate,duration

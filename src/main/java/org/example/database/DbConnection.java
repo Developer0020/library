@@ -1,11 +1,13 @@
 package org.example.database;
 
+import org.springframework.stereotype.Component;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+@Component
 public class DbConnection {
-    public static Connection getConnection() {
+    public  Connection getConnection() {
         try {
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/db_lesson", "postgres", "root");
             return con;
@@ -17,5 +19,4 @@ public class DbConnection {
         return null;
 
     }
-
 }
