@@ -15,7 +15,7 @@ public class BookRepository {
     private DbConnection dbConnection;
 
     public void addBook(Book book) {
-        String sql = "Insert into book(title,author,publishYear,amount,visible) values ('%s','%s',now(),'%s','%s')";
+        String sql = "Insert into book(title,auther,publishYear,amount,visible) values ('%s','%s',now(),'%s','%s')";
         sql = String.format(sql, book.getTitle(), book.getAuthor(), book.getAmount(), true);
         Connection con = dbConnection.getConnection();
         try {
@@ -44,7 +44,7 @@ public class BookRepository {
                 Book book = new Book();
                 book.setId(resultSet.getInt("id"));
                 book.setTitle(resultSet.getString("title"));
-                book.setAuthor(resultSet.getString("author"));
+                book.setAuthor(resultSet.getString("auther"));
                 book.setAmount(resultSet.getString("amount"));
                 book.setPublishYear(resultSet.getDate("publishyear").toLocalDate());
                 book.setVisible(Boolean.parseBoolean(resultSet.getString("visible")));

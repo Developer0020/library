@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DbConnection {
     public  Connection getConnection() {
         try {
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/db_lesson", "postgres", "root");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/lugat", "postgres", "Bobir_2002");
             return con;
         } catch (SQLException e) {
             System.out.println(e.getSQLState());

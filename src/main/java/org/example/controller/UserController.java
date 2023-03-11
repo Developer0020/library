@@ -2,6 +2,7 @@ package org.example.controller;
 
 import org.example.service.BookService;
 import org.example.service.StudentBookService;
+import org.example.util.Component;
 import org.example.util.Scan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,19 +38,21 @@ public class UserController {
     }
 
     private void takeBook() {
-
+        System.out.print("Enter book id : ");
+        studentBookService.takeBook(scanner.intScan().nextInt());
     }
 
     private void takenBook() {
-
+        studentBookService.takenBook();
     }
 
     private void returnBook() {
-
+        System.out.print("Enter book id : ");
+        studentBookService.returnBook(scanner.intScan().nextInt());
     }
 
     private void history() {
-
+        studentBookService.history(Component.student.getId());
     }
 
     private void orderBook() {

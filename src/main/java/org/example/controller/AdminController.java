@@ -4,6 +4,7 @@ import org.example.dto.Book;
 import org.example.dto.Student;
 import org.example.repository.StudentRepository;
 import org.example.service.BookService;
+import org.example.service.StudentBookService;
 import org.example.service.UserService;
 import org.example.util.Scan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class AdminController {
     private BookService bookService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private StudentBookService studentBookService;
 
     public void start() {
         boolean b = true;
@@ -55,11 +58,11 @@ public class AdminController {
 
     private void addBook() {
         Book book = new Book();
-        System.out.print("Enter title :");
+        System.out.print("Enter title : ");
         book.setTitle(scanner.stringScan().nextLine());
-        System.out.print("Enter author");
+        System.out.print("Enter author : ");
         book.setAuthor(scanner.stringScan().nextLine());
-        System.out.print("Enter amount");
+        System.out.print("Enter amount : ");
         book.setAmount(scanner.stringScan().nextLine());
         bookService.addBook(book);
     }
@@ -87,32 +90,18 @@ public class AdminController {
 
     private void deleteStudent() {
         System.out.print("Enter student id :");
-        userService.deleteStudent(scanner.intScan().nextInt(),false);
+        userService.deleteStudent(scanner.intScan().nextInt(), false);
     }
 
     private void studentTakenBook() {
+        studentBookService.studentTakenBook();
     }
 
     private void bookTakenHistory() {
     }
 
 }
-/*--- Admin Menu ---
-1. Book list
-  OrderNumber  BookTitle  BookAuthor  Amount
-2. Add book
-  Enter title
-  Enter author
-  Enter amount
-3. Delete book
-  Enter id
-4. Student List
-5. Add Student
-  Enter name
-  Enter surname
-  Enter phone
-6. Delete student
-  Enter Id
+/*
 7. Student Taken book (studentlar olib hali qaytarmagan kitoblar ro'yhati.)
   Konsolga quyidagilar chiqsin
     OrderNumber  StudentName  StudentSurname StudentPhone   BookTitle  TakenDate (kitobni olgan vaqti)

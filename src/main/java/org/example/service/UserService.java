@@ -32,7 +32,7 @@ public class UserService {
     }
 
     public void deleteStudent(Integer id, boolean visible) {
-
+        studentRepository.deleteStudent(id, visible);
     }
 
 }

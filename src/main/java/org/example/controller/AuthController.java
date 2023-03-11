@@ -30,8 +30,8 @@ public class AuthController {
     public void logIn() {
         System.out.print("Enter phone number :");
         String phone = scanner.stringScan().nextLine();
-        System.out.print("Enter name :");
-        Integer id = scanner.stringScan().nextInt();
+        System.out.print("Enter id :");
+        Integer id = scanner.intScan().nextInt();
         authService.logIn(id, phone);
     }
 }

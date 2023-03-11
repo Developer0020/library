@@ -16,7 +16,7 @@ public class StudentRepository {
 
     public void addStudent(Student student) {
         Connection con = dbConnection.getConnection();
-        String sql = "insert into student (name,surname,phone,createdDate,visible) values ('%s','%s','%s',now(),'%s'";
+        String sql = "insert into student (name,surname,phone,createddate,visible) values ('%s','%s','%s',now(),'%s')";
         sql = String.format(sql, student.getName(), student.getSurname(), student.getPhone(), true);
 
         try {
@@ -80,7 +80,18 @@ public class StudentRepository {
 
     }
 
-    public void deleteStudent() {
-
+    public void deleteStudent(Integer id, boolean visible) {
+        String sql = String.format("update student set visible ='%s' where id ='%s'", visible, id);
+        Connection con = dbConnection.getConnection();
+        try {
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            int b = preparedStatement.executeUpdate();
+            if (b > 0) {
+                System.out.println("Student Success Deleted !!! ");
+            }
+            con.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
