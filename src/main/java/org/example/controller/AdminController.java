@@ -55,7 +55,6 @@ public class AdminController {
     private void bookList() {
         bookService.bookList();
     }
-
     private void addBook() {
         Book book = new Book();
         System.out.print("Enter title : ");
@@ -66,17 +65,14 @@ public class AdminController {
         book.setAmount(scanner.stringScan().nextLine());
         bookService.addBook(book);
     }
-
     private void deleteBook() {
         System.out.print("Enter id :");
         Integer id = scanner.intScan().nextInt();
         bookService.deleteBook(id, false);
     }
-
     private void studentList() {
         userService.studentList();
     }
-
     private void addStudent() {
         Student student = new Student();
         System.out.print("Enter name:");
@@ -87,25 +83,14 @@ public class AdminController {
         student.setPhone(scanner.stringScan().nextLine());
         userService.addStudent(student);
     }
-
     private void deleteStudent() {
         System.out.print("Enter student id :");
         userService.deleteStudent(scanner.intScan().nextInt(), false);
     }
-
     private void studentTakenBook() {
-        studentBookService.studentTakenBook();
+       studentBookService.takenBook();
     }
-
     private void bookTakenHistory() {
+        studentBookService.bookTakenHistory();
     }
-
 }
-/*
-7. Student Taken book (studentlar olib hali qaytarmagan kitoblar ro'yhati.)
-  Konsolga quyidagilar chiqsin
-    OrderNumber  StudentName  StudentSurname StudentPhone   BookTitle  TakenDate (kitobni olgan vaqti)
-8. BookTaken History (barcha studentlarni barcha olib topshirgan yoki hali topshirmagan kitoblar ro'yhati)
-  Studentlarning olib qaytargan yoki olib hali qaytarmagan kitoblar tarixi.
-  Konsolga quyidagilar chiqsin
-    OrderNumber  StudentName  StudentSurname StudentPhone  BookTitle   BookAuthor   Status  TakenDate (kitobni olgan vaqti)    returnedDate*/

@@ -29,9 +29,6 @@ public class AuthController {
     }
     public void logIn() {
         System.out.print("Enter phone number :");
-        String phone = scanner.stringScan().nextLine();
-        System.out.print("Enter id :");
-        Integer id = scanner.intScan().nextInt();
-        authService.logIn(id, phone);
+        authService.logIn(scanner.stringScan().nextLine());
     }
 }

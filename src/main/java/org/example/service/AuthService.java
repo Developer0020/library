@@ -15,15 +15,15 @@ public class AuthService {
     private AdminController adminController;
     @Autowired
     private UserController userController;
-    public void logIn(Integer id, String phone) {
-        if (studentRepository.getStudentById(id, phone) == null) {
+    public void logIn(String phone) {
+        if (studentRepository.getStudentByPhone(phone) == null) {
             System.err.println("Bunday student yo'q!");
-        } else if (studentRepository.getStudentById(id, phone).getPhone().equals("+998936529454")) {
+        } else if (studentRepository.getStudentByPhone(phone).getPhone().equals("+998936529454")) {
+            Component.student = studentRepository.getStudentByPhone(phone);
             adminController.start();
-            Component.student= studentRepository.getStudentById(id, phone);
         } else {
+            Component.student = studentRepository.getStudentByPhone(phone);
             userController.start();
-            Component.student= studentRepository.getStudentById(id, phone);
         }
     }
 }

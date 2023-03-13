@@ -32,33 +32,25 @@ public class UserController {
             }
         }
     }
-
     private void bookList() {
         bookService.bookList();
     }
-
     private void takeBook() {
         System.out.print("Enter book id : ");
-        studentBookService.takeBook(scanner.intScan().nextInt());
+        studentBookService.takeBook(scanner.intScan().nextInt(),Component.student.getId());
     }
-
     private void takenBook() {
         studentBookService.takenBook(Component.student);
     }
-
     private void returnBook() {
         System.out.print("Enter book id : ");
         studentBookService.returnBook(scanner.intScan().nextInt(),Component.student.getId());
     }
-
     private void history() {
         studentBookService.history(Component.student.getId());
     }
-
     private void orderBook() {
-
     }
-
     public Integer menu() {
         System.out.println("--- User Menu ---");
         System.out.println("1. Book List :");
@@ -72,26 +64,3 @@ public class UserController {
     }
 }
 
-
-/*--- User Menu ---
-1. Book bist (kitoblar)
-  OrderNumber  BookTitle  BookAuthor
-2. Take book (kitob olish)
-  Enter book Id
-
-  (bitta student bir vaqtni o'zida 5ta kitob olishi mumkun.
-   Ya'ni studentning olgan hali qaytarmagan kitoblar soni 5ga teng bo'lsa unga boshqa kitob berilmaydi.)
-   Agar kitob qolmagan bo'lsa berilmasin.
-3. Taken book (Olib lekin qaytarmagan kitoblar)
-  Studentni olib hali qaytarmagan kitoblari. Konsolga quyidagilar chiqsin
-    OrderNumber  BookTitle  BookAuthor TakenTime (kitobni olgan vaqti)
-4. Return book
-  Enter book id:
-
-5. History (Shu studentni barcha olgan  topshirgan yoki hali topshirmagan kitoblar ro'yhati)
-  Studentni olib qaytargan yoki olib hali qaytarmagan kitoblar tarixi.
-  Konsolga quyidagilar chiqsin
-    OrderNumber   BookTitle   BookAuthor   Status  TakenDate (kitobni olgan vaqti)    returnedDate
-
-6. Order book (qandaydir kitob bo'lmasa kutubhonachida shu kitobni olib kelinglar deb yozish mumkun.)
-  Enter book name:*/

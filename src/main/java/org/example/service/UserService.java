@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     private StudentRepository studentRepository;
-
     public void addStudent(Student student) {
         if (student != null) {
             studentRepository.addStudent(student);
@@ -18,7 +17,6 @@ public class UserService {
             System.err.println("Nimadur xato ketdi !!!");
         }
     }
-
     public void studentList() {
         if (studentRepository.studentList() != null) {
             studentRepository.studentList().stream().forEach(System.out::println);
@@ -26,11 +24,9 @@ public class UserService {
             System.err.println("List bo'sh !!!");
         }
     }
-
     public Student getStudentById(Integer id) {
         return null;
     }
-
     public void deleteStudent(Integer id, boolean visible) {
         studentRepository.deleteStudent(id, visible);
     }
