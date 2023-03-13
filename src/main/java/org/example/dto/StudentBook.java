@@ -24,9 +24,7 @@ public class StudentBook {
                 ", book_id=" + book_id +
                 ", createdDate=" + createdDate +
                 ", status=" + status +
-                ", returnedDate=" + returnedDate +
-                ", duration='" + duration + '\'' +
-                '}';
+                ", returnedDate=" + returnedDate + "}";
     }
 }
 //id,student_id,book_id,createdDate,status(TAKEN,RETURNED),returnedDate,duration

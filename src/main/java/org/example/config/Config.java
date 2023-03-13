@@ -20,12 +20,10 @@ public class Config {
         dataSource.setPassword("Bobir_2002");
         return dataSource;
     }
-
     @Bean
     public JdbcTemplate getTemplate() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource());
         return jdbcTemplate;
     }
-
 }

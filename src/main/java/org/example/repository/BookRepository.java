@@ -1,6 +1,6 @@
 package org.example.repository;
 
-import org.example.database.DbConnection;
+
 import org.example.dto.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -13,8 +13,6 @@ import java.util.List;
 
 @Repository
 public class BookRepository {
-    @Autowired
-    private DbConnection dbConnection;
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -39,6 +37,9 @@ public class BookRepository {
     }
 
     public void updateBook(Integer id, boolean b) {
+
+    }
+    public void updateBook(Integer id, String amount) {
 
     }
 

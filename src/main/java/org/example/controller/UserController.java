@@ -43,12 +43,12 @@ public class UserController {
     }
 
     private void takenBook() {
-        studentBookService.takenBook();
+        studentBookService.takenBook(Component.student);
     }
 
     private void returnBook() {
         System.out.print("Enter book id : ");
-        studentBookService.returnBook(scanner.intScan().nextInt());
+        studentBookService.returnBook(scanner.intScan().nextInt(),Component.student.getId());
     }
 
     private void history() {

@@ -23,6 +23,7 @@ public class BookService {
         bookRepository.addBook(book);
     }
 
+
     public void deleteBook(Integer id, boolean visible) {
         if (bookRepository.getBookById(id) == null) {
             System.err.println("bunday idLi kitob mavju emas !");
