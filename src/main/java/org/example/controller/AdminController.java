@@ -33,11 +33,11 @@ public class AdminController {
                 case 6 -> deleteStudent();
                 case 7 -> studentTakenBook();
                 case 8 -> bookTakenHistory();
+                case 0 -> b = false;
                 default -> b = false;
             }
         }
     }
-
     private Integer menu() {
         System.out.println("--- Admin Menu ---");
         System.out.println("1.Book List :");
@@ -48,10 +48,10 @@ public class AdminController {
         System.out.println("6.Delete Student :");
         System.out.println("7.Student Taken Book :");
         System.out.println("8.Book Taken History :");
+        System.out.println("0.Exit :");
         System.out.print("Enter action :");
         return scanner.intScan().nextInt();
     }
-
     private void bookList() {
         bookService.bookList();
     }
@@ -88,7 +88,7 @@ public class AdminController {
         userService.deleteStudent(scanner.intScan().nextInt(), false);
     }
     private void studentTakenBook() {
-       studentBookService.takenBook();
+        studentBookService.takenBook();
     }
     private void bookTakenHistory() {
         studentBookService.bookTakenHistory();

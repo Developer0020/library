@@ -1,10 +1,11 @@
 package org.example.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
-@Service
+@Component
 public class Scan {
     public Scanner stringScan(){
         return new Scanner(System.in);

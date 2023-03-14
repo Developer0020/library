@@ -28,7 +28,7 @@ public class StudentBookRepository {
         if (n > 0) {
             System.out.println("Success !");
             bookRepository.updateBook
-                    (studentBook.getBook_id(), String.valueOf(Integer.valueOf(bookRepository.getBookById(studentBook.getBook_id()).getAmount()) - 1));
+                    (String.valueOf(Integer.valueOf(bookRepository.getBookById(studentBook.getBook_id()).getAmount()) - 1),studentBook.getBook_id());
         }
     }
     public StudentBook studentBook(Integer book_id, Integer student_id) {
@@ -45,12 +45,12 @@ public class StudentBookRepository {
         return jdbcTemplate.query("Select * from studentBook ", new BeanPropertyRowMapper<>(StudentBook.class));
     }
     public void returnedBook(Integer book_id, Integer student_id, String duration) {
-        String sql = "update studentBook set status = '%s',returneddate=now(),duration='%s' where  book_id='%s' and student_id='%s'  ";
+        String sql = "update studentBook set status = '%s',returneddate=date(now()),duration='%s' where  book_id='%s' and student_id='%s'  ";
         sql = String.format(sql, Status.RETURNED.name(), duration, book_id, student_id);
         int effectedRows = jdbcTemplate.update(sql);
         if (effectedRows > 0) {
             System.out.println("Success !");
-            bookRepository.updateBook(book_id, String.valueOf(Integer.valueOf(bookRepository.getBookById(book_id).getAmount()) + 1));
+            bookRepository.updateBook(String.valueOf(Integer.valueOf(bookRepository.getBookById(book_id).getAmount()) + 1),book_id);
         }
     }
 }

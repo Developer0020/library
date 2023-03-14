@@ -17,6 +17,7 @@ public class AuthController {
             switch (menu()) {
                 case 1 -> logIn();
                 case 0 -> b = false;
+                default -> System.out.println("Not found this command !!! ");
             }
         }
     }

@@ -25,7 +25,7 @@ public class BookService {
         if (bookRepository.getBookById(id) == null) {
             System.err.println("bunday idLi kitob mavju emas !");
         } else {
-            bookRepository.updateBook(id, visible);
+            bookRepository.updateBook( visible,id);
         }
     }
 }
